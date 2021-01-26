@@ -15,4 +15,4 @@ const protectedRoute = (Comp, route = '/profile') => (props) => {
     return <Comp {...props} />
 }
 
-export default protectedRoute;
+export default protectedRoute

@@ -1,7 +1,7 @@
 import { button } from "aws-amplify";
 import React from "react";
 
-export default function Button({ onClick, title}) {
+export default function Button({ onCLick, title}) {
     return (
         <button style={styles.button} onClick={onCLick}>
             {title}

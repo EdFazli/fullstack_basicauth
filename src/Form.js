@@ -37,7 +37,7 @@ async function confirmSignUp({ username, confirmationCode }, updateFormType) {
     }
 }
 
-async function ForgotPassword({ username}, updateFormType) {
+async function forgotPassword({ username}, updateFormType) {
     try {
         await Auth.forgotPassword(username)
         updateFormType("forgotPasswordSubmit")

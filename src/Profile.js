@@ -37,7 +37,7 @@ function Profile() {
                 <h2>Username: {user.username}</h2>
                 <h3>Email: {user.email}</h3>
                 <h4>Phone: {user.phone_number}</h4>
-                <AmplifySignOut/>
+                <Button onClick={signOut}>Sign Out</Button>
             </Container>
         );
     }

@@ -2,7 +2,7 @@ import React from "react";
 import Button from "./Button";
 import { styles } from "./Form";
 
-function Signup ({ updateFormState, signUp}) {
+function SignUp ({ updateFormState, signUp}) {
     return (
         <div style={styles.container}>
             <input 
@@ -29,4 +29,4 @@ function Signup ({ updateFormState, signUp}) {
     )
 }
 
-export default Signup
+export default SignUp

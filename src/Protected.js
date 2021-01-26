@@ -1,7 +1,7 @@
-import React, {useEffect} from "react";
-import { Auth } from "aws-amplify";
+import React from "react";
+//import { Auth } from "aws-amplify";
 import Container from "./Container";
-import { protectedRoute } from "./protectedRoute";
+import protectedRoute from "./protectedRoute";
 
 function Protected() {
     return (
