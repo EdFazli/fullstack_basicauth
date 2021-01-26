@@ -62,12 +62,55 @@ const initialFormState = {
 function Form(props) {
     const [formType, updateFormType] = useState("signIn")
     const [formState, updateFormState] = useState(initialFormState)
-    function renderForm() {}
-    return (
-        <div>
-            {renderForm()}
-        </div>
-    )
+
+    function updateForm(event) {
+        const newFormState = {
+            ...formState, [event.target.name]: event.target.value
+        }
+        updateFormState(newFormState)
+    }
+
+    function renderForm() {
+        switch(formType) {
+            case "signUp":
+                return (
+                    <SignUp 
+                        signUp={() => signUp(formState, updateFormType)}
+                        updateFormState={e => updateForm(e)}
+                    />
+                )
+            case "confirmSignUp":
+                return (
+                    <ConfirmSignUp 
+                        confirmSignUp={() => confirmSignUp(formState, updateFormType)}
+                        updateFormState={e => updateForm(e)}
+                    />
+                )
+            case "signIn":
+                return (
+                    <SignIn 
+                        signIn={() => signIn(formState, props.setUser)}
+                        updateFormState={e => updateForm(e)}
+                    />
+                )
+            case "forgotPassword":
+                return(
+                    <ForgotPassword
+                        forgotPassword={() => forgotPassword(formState, updateFormType)}
+                        updateFormState={e => updateForm(e)}
+                    />
+                )
+            case "forgotPasswordSubmit":
+                return(
+                    <ForgotPasswordSubmit
+                        forgotPasswordSubmit={() => forgotPasswordSubmit(formState, updateFormType)}
+                        updateFormState={e => updateForm(e)}
+                    />
+                )
+            default:
+                return null
+        }
+    }
 }
 
 const styles = {
