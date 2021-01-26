@@ -111,6 +111,40 @@ function Form(props) {
                 return null
         }
     }
+
+    return (
+        <div>
+            {renderForm}
+            {
+                formType === "signUp" && (
+                    <p style={styles.toggleForm}>
+                        Already have an account? <span 
+                            style={styles.anchor}
+                            onClick={() => updateFormType("signIn")}
+                        >Sign In</span>
+                    </p>
+                )
+            }
+            {
+                formType === "signIn" && (
+                    <>
+                        <p style={styles.toggleForm}>
+                            Need an account? <span 
+                                style={styles.anchor}
+                                onClick={() => updateFormType("signUp")}
+                            >Sign Up</span>
+                        </p>
+                        <p style={{ ...styles.toggleForm, ...styles.resetPassword}}>
+                            Forget your password? <span 
+                                style={styles.anchor}
+                                onClick={() => updateFormType("forgotPassword")}
+                            >Reset Password</span>
+                        </p>
+                    </>
+                )
+            }
+        </div>
+    )
 }
 
 const styles = {
